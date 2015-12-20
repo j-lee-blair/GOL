@@ -8,13 +8,24 @@ namespace GOL_Version1_1._0
     class Cell
     {
         private bool alive;
-        private int liveNeighbours;
         private int x;
         private int y;
+        private Neighbours neighbours;
 
-        public bool Alive{get { return alive; }set { alive = value; }}
-        public int NumOfNeighbours{get { return liveNeighbours; }set { liveNeighbours = value; }}
-        
+        public bool Alive { get { return alive; } set { alive = value; } }
+        public int Neighbours { get { return this.neighbours.Neighbours(); } }
+
+        public Cell()
+        {
+            this.neighbours = new Neighbours(this);
+            this.alive = false;
+        }
+
+        public Cell(bool alive)
+        {
+            this.neighbours = new Neighbours(this);
+            this.alive = false;
+        }
 
         public void SwitchState(bool state)
         {
@@ -26,6 +37,5 @@ namespace GOL_Version1_1._0
             this.x = x;
             this.y = y;
         }
-            
     }
 }
