@@ -7,23 +7,26 @@ using NUnit.Framework;
 namespace GOL_Version1_1._0
 {
     
-    class TestWorld
+    class TestWorld 
     {
 
         [Test]
         public void OneCellIsAddedToWorld()
         {
-            World world = new World(5);
-            Assert.True(world.LivingCells == 1);
+            World w = new World(5);
+            w.PopulateWorld();
+            w.AddLiveCell(1, 1);
+            Assert.True(w.Input[1,1].Alive == true);
         }
 
         [Test]
         public void CellHasLessThanTwoNeighbours()
         {
-            World world = new World(3);
-            Cell c = world.AddCell(1,1);
-            world.Tick(c);
-            Assert.True(c.Alive == false);
+            World w = new World(3);
+            w.PopulateWorld();
+            w.AddLiveCell(1,1);
+            w.Tick();
+            Assert.True(w.Output[1, 1].Alive == false);
         }
     }
 }

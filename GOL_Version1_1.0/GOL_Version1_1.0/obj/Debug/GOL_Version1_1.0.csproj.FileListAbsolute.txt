@@ -1,1 +1,6 @@
-C:\Users\J_dog\Documents\GitHub\GOL\GOL_Version1_1.0\GOL_Version1_1.0\obj\Debug\GOL_Version1_1.0.csprojResolveAssemblyReference.cache
+C:\Users\J_dog\Documents\GitHub\GOL\GOL_Version1_1.0\GOL_Version1_1.0\bin\Debug\GOL_Version1_1.0.exe
+C:\Users\J_dog\Documents\GitHub\GOL\GOL_Version1_1.0\GOL_Version1_1.0\bin\Debug\GOL_Version1_1.0.pdb
+C:\Users\J_dog\Documents\GitHub\GOL\GOL_Version1_1.0\GOL_Version1_1.0\bin\Debug\nunit.framework.dll
+C:\Users\J_dog\Documents\GitHub\GOL\GOL_Version1_1.0\GOL_Version1_1.0\bin\Debug\nunit.framework.xml
+C:\Users\J_dog\Documents\GitHub\GOL\GOL_Version1_1.0\GOL_Version1_1.0\obj\Debug\GOL_Version1_1.0.exe
+C:\Users\J_dog\Documents\GitHub\GOL\GOL_Version1_1.0\GOL_Version1_1.0\obj\Debug\GOL_Version1_1.0.pdb

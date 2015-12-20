@@ -9,7 +9,7 @@ namespace GOL_Version1_1._0
     {
         List<Cell> neighbours;
 
-        public int Neighbours() { return neighbours.Count; }
+        public int numNeighbours() { return neighbours.Count; }
 
         public Neighbours(Cell currentCell)
         {

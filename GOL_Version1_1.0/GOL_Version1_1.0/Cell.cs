@@ -13,7 +13,7 @@ namespace GOL_Version1_1._0
         private Neighbours neighbours;
 
         public bool Alive { get { return alive; } set { alive = value; } }
-        public int Neighbours { get { return this.neighbours.Neighbours(); } }
+        public int Neighbours { get { return this.neighbours.numNeighbours(); } }
 
         public Cell()
         {

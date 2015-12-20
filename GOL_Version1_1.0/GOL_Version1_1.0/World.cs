@@ -10,24 +10,20 @@ namespace GOL_Version1_1._0
         private Cell[,] inputCells;
         private Cell[,] outputCells;
         private int max;
-        private int livingCells;
 
-        public int LivingCells{get { return livingCells; } }
-        
+        public Cell[,] Output {get { return outputCells; }}
+        public Cell[,] Input { get { return inputCells; } }
+
         public World(int max)
         {
             this.max = max;
             inputCells = new Cell[max, max];
-            livingCells = 0;
         }
 
-        public Cell AddCell(int x, int y)
+        public Cell AddLiveCell(int x, int y)
         {
-            Cell cell = new Cell(true);
-            inputCells[x, y] = cell;
-            cell.SetPosition(x, y);
-            livingCells++;
-            return cell;
+            inputCells[x, y].Alive = true;
+            return inputCells[x,y];
         }
 
         public void PopulateWorld()
