@@ -32,9 +32,59 @@ namespace GOL_Version1_1._0
             {
                 for (int j = 0; j < max; j++)
                 {
-                    inputCells[i, j] = new Cell();
+                    inputCells[i, j] = new Cell(i, j);
                 }
             }
+        }
+
+        private void Loop()
+        {
+            for (int i = 0; i < max; i++)
+            {
+                for (int j = 0; j < max; j++)
+                {
+                    inputCells[i, j].Neighbours = GetNeighbouringCells(i, j);
+                }
+            }
+        }
+
+        private int GetNeighbouringCells(int x, int y)
+        {
+            int count = 0;
+
+            if (inputCells[x - 1, y - 1] != null)
+            {
+                count++;
+            }
+            if (inputCells[x, y - 1] != null)
+            {
+                count++;
+            }
+            if (inputCells[x + 1, y - 1] != null)
+            {
+                count++;
+            }
+            if (inputCells[x - 1, y] != null)
+            {
+                count++;
+            }
+            if (inputCells[x + 1, y] != null)
+            {
+                count++;
+            }
+            if (inputCells[x - 1, y + 1] != null)
+            {
+                count++;
+            }
+            if (inputCells[x, y + 1] != null)
+            {
+                count++;
+            }
+            if (inputCells[x + 1, y + 1] != null)
+            {
+                count++;
+            }
+            return count;
         }
 
         public void Tick()

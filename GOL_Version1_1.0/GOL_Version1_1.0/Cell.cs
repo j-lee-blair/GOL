@@ -10,20 +10,20 @@ namespace GOL_Version1_1._0
         private bool alive;
         private int x;
         private int y;
-        private Neighbours neighbours;
+        private int neighbours;
 
         public bool Alive { get { return alive; } set { alive = value; } }
-        public int Neighbours { get { return this.neighbours.numNeighbours(); } }
+        public int Neighbours { get { return this.neighbours; } set { neighbours = value; } }
 
-        public Cell()
+        public Cell(int x, int y)
         {
-            this.neighbours = new Neighbours(this);
+            this.x = x;
+            this.y = y;
             this.alive = false;
         }
 
         public Cell(bool alive)
         {
-            this.neighbours = new Neighbours(this);
             this.alive = false;
         }
 
