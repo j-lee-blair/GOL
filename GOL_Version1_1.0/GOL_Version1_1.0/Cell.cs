@@ -27,17 +27,6 @@ namespace GOL_Version1_1._0
             this.alive = false;
         }
 
-        public void SwitchState(bool state)
-        {
-            alive = state;
-        }
-
-        public void SetPosition(int x, int y)
-        {
-            this.x = x;
-            this.y = y;
-        }
-
         public override string ToString()
         {
             return string.Format("{0}{1}{2}{3}", "Neighbour Count Cell[", x + ", ", y + "] :\t", Neighbours.ToString());

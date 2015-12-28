@@ -22,12 +22,6 @@ namespace GOL_Version1_1._0
                 current.Alive = false;
             }
 
-            //If a cell has 2-3 live neighbours, cell survives
-            //if (current.Alive == true && current.Neighbours == 2)
-            //{
-            //    return;
-            //}
-
             //*********************DEAD CELLS ONLY ***************
             //If a dead cell has exactly 3 neighbours, cell is populated
             else if (current.Alive == false && current.Neighbours == 3)

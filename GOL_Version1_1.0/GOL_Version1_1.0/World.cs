@@ -23,10 +23,12 @@ namespace GOL_Version1_1._0
         public Cell AddLiveCell(int x, int y)
         {
             inputCells[x, y].Alive = true;
+            GetNeighbouringCells();
             return inputCells[x,y];
         }
 
-        public void PopulateWorld()
+        //Starting values for World
+        public void InitWorld()
         {
             for (int i = 0; i < inputCells.GetLength(0); i++)
             {
@@ -46,7 +48,7 @@ namespace GOL_Version1_1._0
                 {
                     inputCells[i, j].Neighbours = GetNeighbouringCells(i, j);
                     
-                    //debug
+                    //for debug purposes only
                     Console.WriteLine(inputCells[i, j].ToString());
                 }
             }
@@ -54,12 +56,16 @@ namespace GOL_Version1_1._0
 
         private int GetNeighbouringCells(int row, int col)
         {
-            int count = 0;
+            //number of neighbours
+            int count = 0; 
+
+            //calculate x,y for each neighbouring group
             int up = (row - 1) < 0 ? 0 : row - 1;
             int down = (row + 1) == max ? 0 : row + 1;
             int left = (col - 1) < 0 ? 0 : col - 1;
             int right = (col + 1) == max ? 0 : col + 1;
 
+            //if neighbouring cell is alive count++ else no effect
             count += inputCells[up,left].Alive ? 1 : 0;
             count += inputCells[up, col].Alive ? 1 : 0;
             count += inputCells[up, right].Alive ? 1 : 0;
@@ -87,6 +93,7 @@ namespace GOL_Version1_1._0
                     outputCells[i, j] = inputCells[i, j];
                 }
             }
+            //transfer post-tick output values to new input ready for next tick 
             inputCells = outputCells;
             GetNeighbouringCells();
         }
