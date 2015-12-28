@@ -13,12 +13,13 @@ namespace GOL_Version1_1._0
             w.PopulateWorld();
             w.AddLiveCell(1, 1);
             w.AddLiveCell(2, 1);
-            w.GetNeighbouringCells();
+            w.AddLiveCell(2, 2);
 
-            //w.Tick();
+            w.GetNeighbouringCells();
             Console.ReadLine();
 
-
+            w.Tick();
+            Console.ReadLine();
         }
     }
 }

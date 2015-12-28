@@ -7,9 +7,9 @@ namespace GOL_Version1_1._0
 {
     class World
     {
+        private int max;
         private Cell[,] inputCells;
         private Cell[,] outputCells;
-        private int max;
 
         public Cell[,] Output {get { return outputCells; }}
         public Cell[,] Input { get { return inputCells; } }
@@ -83,14 +83,12 @@ namespace GOL_Version1_1._0
             {
                 for (int j = 0; j < inputCells.GetLength(0); j++)
                 {
-                    r.CheckRules(inputCells[i,j]);        
+                    r.CheckRules(inputCells[i,j]);
+                    outputCells[i, j] = inputCells[i, j];
                 }
             }
-
             inputCells = outputCells;
+            GetNeighbouringCells();
         }
-
-      
-
     }
 }
