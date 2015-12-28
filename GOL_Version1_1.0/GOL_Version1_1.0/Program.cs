@@ -11,10 +11,12 @@ namespace GOL_Version1_1._0
         {
             World w = new World(3);
             w.PopulateWorld();
-
             w.AddLiveCell(1, 1);
+            w.AddLiveCell(2, 1);
+            w.GetNeighbouringCells();
 
-            w.Tick();
+            //w.Tick();
+            Console.ReadLine();
 
 
         }
