@@ -59,24 +59,17 @@ namespace GOL_Version1_1._0
             //number of neighbours
             int count = 0; 
 
-            //calculate x,y for each neighbouring group
-            int up = row - 1;
-            int left = col - 1;
-
-            int down = row + 1;
-            int right = col + 1;
-
             //if neighbouring cell is alive count++ else no effect
-            count += up >= 0 && left >=0 && inputCells[up,left].Alive ? 1 : 0;
-            count += up >= 0 && inputCells[up, col].Alive ? 1 : 0;
-            count += up >= 0 && right < max && inputCells[up, right].Alive ? 1 : 0;
+            count += row-1 >= 0 && col-1 >=0 && inputCells[row-1,col-1].Alive ? 1 : 0;
+            count += row-1 >= 0 && inputCells[row-1, col].Alive ? 1 : 0;
+            count += row-1 >= 0 && col+1 < max && inputCells[row-1, col+1].Alive ? 1 : 0;
 
-            count += down < max && left >= 0 && inputCells[down, left].Alive ? 1 : 0;
-            count += down < max && inputCells[down, col].Alive ? 1 : 0;
-            count += down < max && right < max && inputCells[down, right].Alive ? 1 : 0;
+            count += row+1 < max && col-1 >= 0 && inputCells[row+1, col-1].Alive ? 1 : 0;
+            count += row+1 < max && inputCells[row+1, col].Alive ? 1 : 0;
+            count += row+1 < max && col+1< max && inputCells[row+1, col+1].Alive ? 1 : 0;
 
-            count += left >= 0 && inputCells[row, left].Alive ? 1 : 0;
-            count += right < max && inputCells[row, right].Alive ? 1 : 0;
+            count += col-1 >= 0 && inputCells[row, col-1].Alive ? 1 : 0;
+            count += col+1 < max && inputCells[row, col+1].Alive ? 1 : 0;
 
             return count;
         }
