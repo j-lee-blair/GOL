@@ -5,7 +5,7 @@ using System.Text;
 
 namespace GOL_Version1_1._0
 {
-    class World
+    class Grid
     {
         private int max;
         private Cell[,] inputCells;
@@ -14,7 +14,7 @@ namespace GOL_Version1_1._0
         public Cell[,] Output {get { return outputCells; }}
         public Cell[,] Input { get { return inputCells; } }
 
-        public World(int max)
+        public Grid(int max)
         {
             this.max = max;
             inputCells = new Cell[max, max];
@@ -49,7 +49,7 @@ namespace GOL_Version1_1._0
                     inputCells[i, j].Neighbours = GetNeighbouringCells(i, j);
                     
                     //for debug purposes only
-                    Console.WriteLine(inputCells[i, j].ToString());
+                    //Console.WriteLine(inputCells[i, j].ToString());
                 }
             }
         }
@@ -60,22 +60,23 @@ namespace GOL_Version1_1._0
             int count = 0; 
 
             //calculate x,y for each neighbouring group
-            int up = (row - 1) < 0 ? 0 : row - 1;
-            int down = (row + 1) == max ? 0 : row + 1;
-            int left = (col - 1) < 0 ? 0 : col - 1;
-            int right = (col + 1) == max ? 0 : col + 1;
+            int up = row - 1;
+            int left = col - 1;
+
+            int down = row + 1;
+            int right = col + 1;
 
             //if neighbouring cell is alive count++ else no effect
-            count += inputCells[up,left].Alive ? 1 : 0;
-            count += inputCells[up, col].Alive ? 1 : 0;
-            count += inputCells[up, right].Alive ? 1 : 0;
+            count += up >= 0 && left >=0 && inputCells[up,left].Alive ? 1 : 0;
+            count += up >= 0 && inputCells[up, col].Alive ? 1 : 0;
+            count += up >= 0 && right < max && inputCells[up, right].Alive ? 1 : 0;
 
-            count += inputCells[down, left].Alive ? 1 : 0;
-            count += inputCells[down, col].Alive ? 1 : 0;
-            count += inputCells[down, right].Alive ? 1 : 0;
+            count += down < max && left >= 0 && inputCells[down, left].Alive ? 1 : 0;
+            count += down < max && inputCells[down, col].Alive ? 1 : 0;
+            count += down < max && right < max && inputCells[down, right].Alive ? 1 : 0;
 
-            count += inputCells[row, left].Alive ? 1 : 0;
-            count += inputCells[row, right].Alive ? 1 : 0;
+            count += left >= 0 && inputCells[row, left].Alive ? 1 : 0;
+            count += right < max && inputCells[row, right].Alive ? 1 : 0;
 
             return count;
         }
@@ -93,6 +94,7 @@ namespace GOL_Version1_1._0
                     outputCells[i, j] = inputCells[i, j];
                 }
             }
+
             //transfer post-tick output values to new input ready for next tick 
             inputCells = outputCells;
             GetNeighbouringCells();

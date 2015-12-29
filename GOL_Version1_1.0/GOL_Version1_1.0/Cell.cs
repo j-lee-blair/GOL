@@ -29,7 +29,9 @@ namespace GOL_Version1_1._0
 
         public override string ToString()
         {
-            return string.Format("{0}{1}{2}{3}", "Neighbour Count Cell[", x + ", ", y + "] :\t", Neighbours.ToString());
+            return (this.Alive == true) ? "[X]\t" : "[O]\t";
         }
+
+        
     }
 }
