@@ -9,32 +9,31 @@ namespace GOL_Version1_1._0
     {
         static void Main(string[] args)
         {
-            Grid g = new Grid(3);
+            Grid g = new Grid(10);
             View v = new View(g);
             g.InitWorld();
 
             g.AddLiveCell(0, 0);
             g.AddLiveCell(0, 1);
             g.AddLiveCell(0, 2);
+            g.AddLiveCell(0, 3);
+            g.AddLiveCell(0, 4);
+            g.AddLiveCell(0, 5);
+            g.AddLiveCell(0, 6);
             v.UpdateDisplay();            
 
-            Console.ReadLine();
-            g.Tick();
-            v.UpdateDisplay();
-
-            Console.ReadLine();
-            //g.AddLiveCell(0, 2);
-            v.UpdateDisplay();
-
-            Console.ReadLine();
-            g.Tick();
-            v.UpdateDisplay();
+            Start(g, v);
             
-            Console.ReadLine();
-            g.Tick();
-            v.UpdateDisplay();
-     
-            Console.ReadLine();
+        }
+        
+        private static void Start(Grid g, View v)
+        {
+            while (true)
+            {
+                Console.ReadLine();
+                g.Tick();
+                v.UpdateDisplay();
+            }
         }
     }
 }

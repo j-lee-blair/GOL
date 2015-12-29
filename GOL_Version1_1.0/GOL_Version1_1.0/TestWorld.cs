@@ -26,7 +26,7 @@ namespace GOL_Version1_1._0
             w.InitWorld();
             w.AddLiveCell(1,1);
             w.Tick();
-            Assert.True(w.Output[1, 1].Alive == false);
+            Assert.True(w.Input[1, 1].Alive == false);
         }
     }
 }

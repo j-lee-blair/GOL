@@ -29,9 +29,7 @@ namespace GOL_Version1_1._0
 
         public override string ToString()
         {
-            return (this.Alive == true) ? "[X]\t" : "[O]\t";
+            return this.alive ? "[X]\t" : "[O]\t";
         }
-
-        
     }
 }

@@ -9,9 +9,7 @@ namespace GOL_Version1_1._0
     {
         private int max;
         private Cell[,] inputCells;
-        private Cell[,] outputCells;
-
-        public Cell[,] Output {get { return outputCells; }}
+        
         public Cell[,] Input { get { return inputCells; } }
 
         public Grid(int max)
@@ -47,9 +45,6 @@ namespace GOL_Version1_1._0
                 for (int j = 0; j < inputCells.GetLength(0); j++)
                 {
                     inputCells[i, j].Neighbours = GetNeighbouringCells(i, j);
-                    
-                    //for debug purposes only
-                    //Console.WriteLine(inputCells[i, j].ToString());
                 }
             }
         }
@@ -59,15 +54,13 @@ namespace GOL_Version1_1._0
             //number of neighbours
             int count = 0; 
 
-            //if neighbouring cell is alive count++ else no effect
+            //if neighbouring cell is within bounds and alive increment count
             count += row-1 >= 0 && col-1 >=0 && inputCells[row-1,col-1].Alive ? 1 : 0;
             count += row-1 >= 0 && inputCells[row-1, col].Alive ? 1 : 0;
             count += row-1 >= 0 && col+1 < max && inputCells[row-1, col+1].Alive ? 1 : 0;
-
             count += row+1 < max && col-1 >= 0 && inputCells[row+1, col-1].Alive ? 1 : 0;
             count += row+1 < max && inputCells[row+1, col].Alive ? 1 : 0;
             count += row+1 < max && col+1< max && inputCells[row+1, col+1].Alive ? 1 : 0;
-
             count += col-1 >= 0 && inputCells[row, col-1].Alive ? 1 : 0;
             count += col+1 < max && inputCells[row, col+1].Alive ? 1 : 0;
 
@@ -77,7 +70,7 @@ namespace GOL_Version1_1._0
         public void Tick()
         {
             Rules r = new Rules();
-            outputCells = new Cell[max, max];
+            Cell[,]outputCells = new Cell[max, max];
 
             for (int i = 0; i < inputCells.GetLength(0); i++)
             {

@@ -21,6 +21,7 @@ namespace GOL_Version1_1._0
             {
                 for (int j = 0; j < grid.Input.GetLength(0); j++)
                 {
+                    Console.ForegroundColor = grid.Input[i, j].Alive ? ConsoleColor.Magenta : ConsoleColor.Blue;
                     Console.Write(grid.Input[i, j].ToString());
                 }
                 Console.WriteLine("");
