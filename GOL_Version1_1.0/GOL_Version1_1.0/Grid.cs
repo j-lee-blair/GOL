@@ -26,7 +26,7 @@ namespace GOL_Version1_1._0
         }
 
         //Starting values for World
-        public void InitWorld()
+        public void InitGrid()
         {
             for (int i = 0; i < inputCells.GetLength(0); i++)
             {
@@ -65,6 +65,17 @@ namespace GOL_Version1_1._0
             count += col+1 < max && inputCells[row, col+1].Alive ? 1 : 0;
 
             return count;
+        }
+
+        private void GrowGrid(int max)
+        {
+            
+        }
+
+        private int NewSize(int size)
+        {
+            int newSize = Math.Max(1, (int)Math.Ceiling(0.2 * size));
+            return newSize;
         }
 
         public void Tick()

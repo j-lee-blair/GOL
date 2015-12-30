@@ -14,7 +14,7 @@ namespace GOL_Version1_1._0
         public void OneCellIsAddedToWorld()
         {
             Grid w = new Grid(5);
-            w.InitWorld();
+            w.InitGrid();
             w.AddLiveCell(1, 1);
             Assert.True(w.Input[1,1].Alive == true);
         }
@@ -23,7 +23,7 @@ namespace GOL_Version1_1._0
         public void CellHasLessThanTwoNeighbours()
         {
             Grid w = new Grid(3);
-            w.InitWorld();
+            w.InitGrid();
             w.AddLiveCell(1,1);
             w.Tick();
             Assert.True(w.Input[1, 1].Alive == false);

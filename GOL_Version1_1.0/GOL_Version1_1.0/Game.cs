@@ -11,7 +11,7 @@ namespace GOL_Version1_1._0
         {
             Grid g = new Grid(10);
             View v = new View(g);
-            g.InitWorld();
+            g.InitGrid();
 
             g.AddLiveCell(0, 0);
             g.AddLiveCell(0, 1);
