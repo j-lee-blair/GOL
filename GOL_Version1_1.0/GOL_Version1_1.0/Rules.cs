@@ -29,5 +29,19 @@ namespace GOL_Version1_1._0
                 current.Alive = true;
             }
         }
+
+        /// Method for resizing a multi dimensional array
+        public void ResizeArray(ref string[,] original, int cols, int rows)
+        {
+            //create a new 2 dimensional array with
+            //the size we want
+            string[,] newArray = new string[rows, cols];
+
+            //copy the contents of the old array to the new one
+            Array.Copy(original, newArray, original.Length);
+
+            //set the original to the new array
+            original = newArray;
+        }
     }
 }

@@ -5,3 +5,10 @@ C:\Users\J\Documents\GitHub\GOL\GOL_Version2_1.0\GOL_Version2_1.0\bin\Debug\nuni
 C:\Users\J\Documents\GitHub\GOL\GOL_Version2_1.0\GOL_Version2_1.0\bin\Debug\nunit.framework.xml
 C:\Users\J\Documents\GitHub\GOL\GOL_Version2_1.0\GOL_Version2_1.0\obj\Debug\GOL_Version2_1.0.exe
 C:\Users\J\Documents\GitHub\GOL\GOL_Version2_1.0\GOL_Version2_1.0\obj\Debug\GOL_Version2_1.0.pdb
+C:\Github\GOL\GOL_Version2_1.0\GOL_Version2_1.0\obj\Debug\GOL_Version2_1.0.exe
+C:\Github\GOL\GOL_Version2_1.0\GOL_Version2_1.0\obj\Debug\GOL_Version2_1.0.pdb
+C:\Github\GOL\GOL_Version2_1.0\GOL_Version2_1.0\bin\Debug\GOL_Version2_1.0.exe
+C:\Github\GOL\GOL_Version2_1.0\GOL_Version2_1.0\bin\Debug\GOL_Version2_1.0.pdb
+C:\Github\GOL\GOL_Version2_1.0\GOL_Version2_1.0\bin\Debug\nunit.framework.dll
+C:\Github\GOL\GOL_Version2_1.0\GOL_Version2_1.0\bin\Debug\nunit.framework.xml
+C:\Github\GOL\GOL_Version2_1.0\GOL_Version2_1.0\obj\Debug\GOL_Version2_1.0.csprojResolveAssemblyReference.cache

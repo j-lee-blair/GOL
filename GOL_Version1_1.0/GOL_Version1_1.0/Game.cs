@@ -33,6 +33,7 @@ namespace GOL_Version1_1._0
                 Console.ReadLine();
                 g.Tick();
                 v.UpdateDisplay();
+                
             }
         }
     }
